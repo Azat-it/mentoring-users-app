@@ -89,6 +89,25 @@
                 </mat-option>
               </mat-autocomplete>
             </mat-form-field>
+
+            <mat-form-field
+              class="edit-user-field"
+            >
+              <mat-label>Количество сторипоинтов:</mat-label>
+              <input
+                type="number"
+                class="edit-user-input"
+                placeholder="Cторипоинты"
+                matInput
+                formControlName="totalStoryPoints"
+              />
+              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let suggestion of citySuggestions | ngrxPush" [value]="suggestion">
+                  {{ suggestion }}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+
           </div>
           <mat-card-actions class="edit-user-btns-container" *ngIf="vm.editMode">
             <button
